@@ -6,7 +6,16 @@ import { ThemeProvider } from "./theme-provider";
 import WeatherDashboard from "./pages/WeatherDashboard";
 import CityPage from "./pages/CityPage";
 
-const queryClient = new QueryClient();
+const queryClient = new QueryClient({
+	defaultOptions: {
+		queries: {
+			staleTime: 5 * 60 * 1000,
+			gcTime: 10 * 60 * 1000,
+			retry: false,
+			refetchOnWindowFocus: false,
+		},
+	},
+});
 
 function App() {
 	return (
