@@ -26,7 +26,7 @@ export function WeatherDetails({ data }: WeatherDetailsProps) {
 			title: "Sunrise",
 			value: formatTime(sys.sunrise),
 			icon: Sunrise,
-			color: "text-yellow-300",
+			color: "text-red-500",
 		},
 		{
 			title: "Sunset",

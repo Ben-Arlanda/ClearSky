@@ -11,6 +11,8 @@ import {
 import { CurrentWeather } from "@/components/current-weather";
 import { HourlyTemperature } from "@/components/hourly-temperature";
 import { WeatherDetails } from "@/components/weather-details";
+import { WeatherForecast } from "@/components/weather-forecast";
+import { FavoriteCities } from "@/components/favorite-cities";
 
 const WeatherDashboard = () => {
 	const {
@@ -102,6 +104,7 @@ const WeatherDashboard = () => {
 
 	return (
 		<div className="space-y-4">
+			<FavoriteCities />
 			<div className="flex items-center justify-between">
 				<h1 className="text-xl font-bold tracking-tight">My Location</h1>
 				<Button
@@ -125,7 +128,7 @@ const WeatherDashboard = () => {
 				</div>
 				<div className="grid gap-6 md:grid-cols-2 items-start">
 					<WeatherDetails data={weatherQuery.data} />
-					{/* <WeatherForecast data={forecastQuery.data} /> */}
+					<WeatherForecast data={forecastQuery.data} />
 				</div>
 			</div>
 		</div>
